@@ -59,8 +59,9 @@ cc -o ./nob/nob ./nob/nob.c
 ## Usage
   
 ``` bash
+$ jobb        : run from current directory
 $ jobb help   : view help
-$ jobb <path> : specify a file or directory
+$ jobb <path> : specify a target file or directory
 ```
   
 ---

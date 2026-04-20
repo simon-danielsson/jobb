@@ -30,6 +30,7 @@ void print_help() {
     printf("%s v%s\n", PRG_N, PRG_V);
     printf("%s\n%s\n", PRG_L, PRG_R);
     printf("--------------\n");
+    printf("$ jobb        : run from current directory\n");
     printf("$ jobb help   : view help\n");
-    printf("$ jobb <path> : specify a file or directory\n");
+    printf("$ jobb <path> : specify a target file or directory\n");
 }
