@@ -3,7 +3,7 @@
 </p>
   
 <p align="center">
-  <em>A simple bash prompt.</em>
+  <em>A search utility for TODO statements.</em>
 </p>
   
 <p align="center">
