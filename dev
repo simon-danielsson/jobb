@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
+build() {
+    mkdir build 2>/dev/null
+    cc -o ./nob/nob ./nob/nob.c
+    ./nob/nob
+}
+
+run() {
+    ./build/main
+}
+
+help() {
+    echo "$ dev build : compile project"
+    echo "$ dev run   : run project"
+    echo "$ dev       : compile/run"
+    echo "$ dev help  : display help"
+}
+
+case "$1" in
+  build)
+    build
+    ;;
+  run)
+    build
+    run
+    ;;
+  help)
+    help
+    ;;
+  *)
+    build
+    run
+    ;;
+esac
