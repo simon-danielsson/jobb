@@ -7,7 +7,6 @@
 </p>
   
 <p align="center">
-    <img src="https://img.shields.io/badge/C_version-23-cyan?style=flat-square" alt="C version" />
     <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="MIT License" />
   <img src="https://img.shields.io/github/last-commit/simon-danielsson/jobb/main?style=flat-square&color=blue" alt="Last commit" />
 </p>
@@ -34,7 +33,25 @@ Jobb is a search utility, but don't be mistaken! Jobb cannot be compared to tool
 
 ## Install
   
-Clone and compile on your own machine. This project uses [nob.h](https://github.com/tsoding/nob.h) as its build-system and is not reliant on any third-party tools apart from a C compiler.
+Clone and compile on your own machine. This project uses [nob.h](https://github.com/tsoding/nob.h) as its build-system and is not reliant on any third-party tools apart from a C compiler.  
+  
+``` bash
+# clone this repo
+git clone https://github.com/simon-danielsson/jobb
+
+# create build directory
+mkdir build
+
+# bootstrap nob
+cc -o ./nob/nob ./nob/nob.c
+
+# run nob to compile the program
+./nob/nob
+
+# run program 
+# (make a bash alias for this to avoid dealing with bin paths)
+./build/main
+```
   
 ---
 <div id="usage"></div>

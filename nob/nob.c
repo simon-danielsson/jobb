@@ -43,6 +43,9 @@ static bool collect_files(Nob_Walk_Entry entry) {
 int main(int argc, char **argv) {
     NOB_GO_REBUILD_URSELF(argc, argv);
 
+    if (!nob_mkdir_if_not_exists(BUILD_FOLDER))
+        return 1;
+
     Nob_Cmd cmd = {0};
 
     nob_cc(&cmd);
