@@ -3,8 +3,8 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-build() {
-    mkdir build 2>/dev/null
+compile() {
+    mkdir -p build
     cc -o ./nob/nob ./nob/nob.c
     ./nob/nob
 }
@@ -14,15 +14,15 @@ run() {
 }
 
 help() {
-    echo "$ dev build : compile project"
-    echo "$ dev run   : run project"
-    echo "$ dev       : compile/run"
-    echo "$ dev help  : display help"
+    echo "$ dev compile : compile project"
+    echo "$ dev run     : run compiled binary"
+    echo "$ dev         : compile/run"
+    echo "$ dev help    : display help"
 }
 
 case "$1" in
-  build)
-    build
+  compile)
+    compile
     ;;
   run)
     build

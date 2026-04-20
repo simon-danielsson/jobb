@@ -11,8 +11,8 @@
 // constants
 #define KEY "TODO"
 #define BLACKLIST                                                              \
-{".git",   "target", "python3", "venv", "nob",                               \
-    ".cargo", ".cache", ".html",   ".toml"}
+{".git", "node_modules", "target", "python3", "venv",                        \
+    "nob",  ".cargo",       ".cache", ".html",   ".toml"}
 #define LINE_BUF_SIZE 512
 #define CONTENT_BUF_SIZE 8024
 

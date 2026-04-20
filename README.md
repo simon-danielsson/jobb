@@ -36,20 +36,23 @@ Jobb is a search utility, but don't be mistaken! Jobb cannot be compared to tool
 Clone and compile on your own machine. This project uses [nob.h](https://github.com/tsoding/nob.h) as its build-system and is not reliant on any third-party tools apart from a C compiler.  
   
 ``` bash
-# 1. clone this repo
+# 1. Clone this repo
 git clone https://github.com/simon-danielsson/jobb
 
-# 2. cd into it
+# 2. Enter it
 cd jobb
 
-# 3. run build script
-./dev build
+# 3. Compile
+./dev compile
 
-# 4. run program 
+# 4. Run
 ./dev run
 
-# 5. add the binary to your .bashrc if you so choose
+# 5. Add the binary to your .bashrc if you so choose
+# I have copied the binary to a folder in my dotfiles and added it to my path like this:
+export PATH='$PATH:$HOME/dotfiles/custom_bins:$PATH'
 ```
+  
   
 ---
 <div id="usage"></div>
