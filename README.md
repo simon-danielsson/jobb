@@ -3,7 +3,7 @@
 </p>
   
 <p align="center">
-  <em>A search utility for TODO statements.</em>
+  <em>A search utility for TODO statements in codebases.</em>
 </p>
   
 <p align="center">
