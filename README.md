@@ -36,21 +36,19 @@ Jobb is a search utility, but don't be mistaken! Jobb cannot be compared to tool
 Clone and compile on your own machine. This project uses [nob.h](https://github.com/tsoding/nob.h) as its build-system and is not reliant on any third-party tools apart from a C compiler.  
   
 ``` bash
-# clone this repo
+# 1. clone this repo
 git clone https://github.com/simon-danielsson/jobb
 
-# create build directory
-mkdir build
+# 2. cd into it
+cd jobb
 
-# bootstrap nob
-cc -o ./nob/nob ./nob/nob.c
+# 3. run build script
+./dev build
 
-# run nob to compile the program
-./nob/nob
+# 4. run program 
+./dev run
 
-# run program 
-# (make a bash alias for this to avoid dealing with bin paths)
-./build/main
+# 5. add the binary to your .bashrc if you so choose
 ```
   
 ---
