@@ -4,7 +4,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 compile() {
-    mkdir -p build
+    mkdir build
     cc -o ./nob/nob ./nob/nob.c
     ./nob/nob
 }
@@ -25,14 +25,13 @@ case "$1" in
     compile
     ;;
   run)
-    build
     run
     ;;
   help)
     help
     ;;
   *)
-    build
+    compile
     run
     ;;
 esac

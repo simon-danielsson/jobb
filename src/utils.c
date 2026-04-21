@@ -1,8 +1,33 @@
 #include "main.h"
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/stat.h>
+
+char *remove_comment_prefixes_and_whitespace_at_beginning(char *input) {
+    if (input == NULL) {
+        return NULL;
+    }
+
+    char *p = input;
+
+    while (*p && isspace((unsigned char)*p)) {
+        p++;
+    }
+
+    if (strncmp(p, "//", 2) == 0) {
+        p += 2;
+    } else if (strncmp(p, "/**", 3) == 0) {
+        p += 3;
+    } else if (strncmp(p, "/*", 2) == 0) {
+        p += 2;
+    } else if (*p == '*') {
+        p += 1;
+    }
+
+    while (*p && isspace((unsigned char)*p)) {
+        p++;
+    }
+
+    memmove(input, p, strlen(p) + 1);
+    return input;
+}
 
 bool is_valid_path(const char *s) {
     struct stat path_stat;

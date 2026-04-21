@@ -1,12 +1,7 @@
 #include "main.h"
 #include "utils.h"
-#include <ctype.h>
 #include <dirent.h>
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include <sys/stat.h>
 
 // constants
 #define KEY "TODO"
@@ -171,6 +166,7 @@ void scan_file(TodoList *tdl, const char *path) {
                 content[0] = '\0';
             } else {
                 size_t content_len = strlen(content);
+                remove_comment_prefixes_and_whitespace_at_beginning(line);
                 size_t line_len = strlen(line);
 
                 if (content_len + line_len + 1 < CONTENT_BUF_SIZE) {
@@ -187,6 +183,7 @@ void scan_file(TodoList *tdl, const char *path) {
             todo_line = line_nr;
             content[0] = '\0';
 
+            remove_comment_prefixes_and_whitespace_at_beginning(line);
             if (strlen(line) + 1 < CONTENT_BUF_SIZE) {
                 strcat(content, line);
             } else {
@@ -260,11 +257,13 @@ void walk_dir(TodoList *tdl, char *target_path) {
         switch (check_path_type(file_path)) {
             case IS_FILE:
                 scan_file(tdl, file_path);
+                break;
             case IS_DIR:
                 walk_dir(tdl, file_path);
+                break;
             case IS_ELSE:
-            default: {
-                     }
+            default:
+                break;
         }
         // printf("%s\n", file_path);
     }
